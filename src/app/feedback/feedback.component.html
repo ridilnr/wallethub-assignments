@@ -1,0 +1,63 @@
+<main>
+  <section *ngIf="!formSubmitted; else customMessage">
+    <article>
+      <h1>Project Appreciations</h1>
+      <p>
+        Hey there ! I will appreciate a lot if you can give me your feedback about this project.
+        <br>Feel free to fill up this form :
+      </p>
+    </article>
+    <form (submit)="onSubmit($event)">
+      <div class="mb-3">
+        <div class="input-group">
+          <label for="name" class="font-weight-bold mt-1">Name : </label>
+          <input type="text" id="name" class="form-control ml-2" placeholder="Enter your name"
+                 [value]="feedback.name" (input)="checkForNameError($event)"
+                 (blur)="checkForNameError($event)" aria-label="name" aria-describedby="basic-addon-name">
+          <div class="input-group-prepend">
+          <span class="input-group-text" id="basic-addon-name">
+            <fa-icon [icon]="['fas', 'user']"></fa-icon>
+          </span>
+          </div>
+        </div>
+        <div *ngIf="errorMessages.nameError.state" class="text-danger ml-6 mt-1">
+          {{ errorMessages.nameError.message }}
+        </div>
+      </div>
+      <div class="mb-3">
+        <div class="input-group">
+          <label for="grade" class="font-weight-bold mt-1">Grade : </label>
+          <input type="number" min="1" max="10" id="grade" class="form-control ml-2" placeholder="Enter a grade"
+                 [value]="feedback.grade" (input)="checkForGradeError($event)"
+                 (blur)="checkForGradeError($event)" aria-label="grade" aria-describedby="basic-addon-grade">
+          <div class="input-group-prepend">
+          <span class="input-group-text" id="basic-addon-grade">
+            <fa-icon [icon]="['fas', 'marker']"></fa-icon>
+          </span>
+          </div>
+        </div>
+        <div *ngIf="errorMessages.gradeError.state" class="text-danger ml-6 mt-1">
+          {{ errorMessages.gradeError.message }}
+        </div>
+      </div>
+      <div class="form-group mb-3">
+        <label for="comments" class="font-weight-bold">Comments : </label>
+        <textarea class="form-control" id="comments" rows="3" placeholder="Please let us know your thoughts about this project (optional)"
+                  [value]="feedback.comments" (input)="setComments($event)">
+          </textarea>
+      </div>
+      <button type="submit" [disabled]="invalidForm" [className]="classBtnSubmit">Confirm Feedback</button>
+    </form>
+  </section>
+  <ng-template #customMessage>
+    <app-message>
+      <section class="p-5">
+        <h1 class="text-success font-size-lg-large">Thank you {{ feedback.name | uppercase }} for your feedback !</h1>
+        <p class="mt-3 font-size-larger"> I really appreciate your feedback. Have a nice day !</p>
+        <div>
+          <img alt="" src="../../assets/img/feedback-smile.png" class="img-fluid w-40">
+        </div>
+      </section>
+    </app-message>
+  </ng-template>
+</main>

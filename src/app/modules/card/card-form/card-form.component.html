@@ -1,0 +1,82 @@
+<main>
+  <section>
+    <article>
+      <h1>Barclaycard MasterCard Application Form</h1>
+      <p>
+        Please fill in the following application form in order to get your card in the next coming days.
+      </p>
+    </article>
+    <section class="d-lg-flex flex-lg-row justify-content-between">
+      <div class="d-none d-lg-block w-lg-45 align-self-center">
+        <img src="../../../../assets/img/credit-card-img.jpg" alt="credit-card-image" class="img-fluid">
+      </div>
+      <form class="w-lg-45" (submit)="onSubmit($event)">
+        <div class="mb-3">
+          <div class="input-group">
+            <label for="fullname" class="font-weight-bold mt-1">Full Name : </label>
+            <input type="text" id="fullName" class="form-control ml-2" placeholder="Enter your full name"
+                   [value]="cardData.fullName" (input)="checkForFullNameError($event)"
+                   (blur)="checkForFullNameError($event)" aria-label="fullname" aria-describedby="basic-addon-fullname">
+            <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon-fullname">
+              <fa-icon [icon]="['fas', 'user']"></fa-icon>
+            </span>
+            </div>
+          </div>
+          <div *ngIf="errorMessages.fullNameError.state" class="text-danger mt-1">
+            {{ errorMessages.fullNameError.message }}
+          </div>
+        </div>
+        <div class="mb-3">
+          <div class="input-group">
+            <label for="homeaddress" class="font-weight-bold mt-1">Home Address : </label>
+            <input type="text" id="homeAddress" class="form-control ml-2" placeholder="Enter your home address"
+                   [value]="cardData.homeAddress" (input)="checkForHomeAddressError($event)"
+                   (blur)="checkForHomeAddressError($event)" aria-label="homeaddress" aria-describedby="basic-addon-homeaddress">
+            <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon-homeaddress">
+              <fa-icon [icon]="['fas', 'map-marked']"></fa-icon>
+            </span>
+            </div>
+          </div>
+          <div *ngIf="errorMessages.homeAddressError.state" class="text-danger mt-1">
+            {{ errorMessages.homeAddressError.message }}
+          </div>
+        </div>
+        <div class="mb-3">
+          <div class="input-group">
+            <label for="email" class="font-weight-bold mt-1">Email : </label>
+            <input type="email" id="email" class="form-control ml-2" placeholder="Enter your email address"
+                   [value]="cardData.email" (input)="checkForEmailError($event)"
+                   (blur)="checkForEmailError($event)" aria-label="email" aria-describedby="basic-addon-email">
+            <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon-email">
+              <fa-icon [icon]="['fas', 'at']"></fa-icon>
+            </span>
+            </div>
+          </div>
+          <div *ngIf="errorMessages.emailError.state" class="text-danger mt-1">
+            {{ errorMessages.emailError.message }}
+          </div>
+        </div>
+        <div class="mb-3">
+          <div class="input-group">
+            <label for="income" class="font-weight-bold mt-1">Monthly Income : </label>
+            <input type="text" id="income" class="form-control ml-2" placeholder="Enter your monthly income"
+                   [value]="cardData.income" (input)="checkForIncomeError($event)"
+                   (blur)="checkForIncomeError($event); convertIncomeToUsdFormat(cardData.income)" aria-label="income" aria-describedby="basic-addon-income">
+            <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon-income">
+              <fa-icon [icon]="['fas', 'dollar-sign']"></fa-icon>
+            </span>
+            </div>
+          </div>
+          <div *ngIf="errorMessages.incomeError.state" class="text-danger mt-1">
+            {{ errorMessages.incomeError.message }}
+          </div>
+        </div>
+        <button type="submit" [disabled]="invalidForm" [className]="classBtnSubmit">Submit Application</button>
+      </form>
+    </section>
+  </section>
+</main>

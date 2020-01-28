@@ -1,0 +1,13 @@
+/* Styles for All devices screens */
+main {
+  background-color: var(--off-white-color, #F1F5F8);
+  min-height: 100vh; }
+  main > section {
+    padding: 5%; }
+
+/* Styles for small devices screens */
+/* Styles for medium devices screens */
+/* Styles for large devices screens */
+/* Styles for extra-large devices screens */
+
+/*# sourceMappingURL=card-form.component.css.map */

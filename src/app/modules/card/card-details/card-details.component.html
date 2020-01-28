@@ -1,0 +1,35 @@
+<main>
+  <button class="btn btn-light mt-5 ml-5 customGoBackBtn" (click)="goBack()">Go Back</button>
+  <section>
+    <h1>Details Rates &amp; Fees</h1>
+    <section class="d-flex flex-column flex-md-row justify-content-between">
+      <table class="table w-md-40">
+        <thead class="thead-dark">
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Fees ($)</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>Subscription Fees</td>
+          <td>20</td>
+        </tr>
+        <tr>
+          <td>Withdrawal Fees</td>
+          <td>5</td>
+        </tr>
+        <tr>
+          <td>Card Fees</td>
+          <td>50</td>
+        </tr>
+        </tbody>
+      </table>
+      <ul class="list-unstyled mt-5 mt-md-0 w-md-55">
+        <app-customer *ngFor="let client of customers"
+          [customer]="client"></app-customer>
+        <app-new-comment (commentAdded)="onCommentAdded($event)"></app-new-comment>
+      </ul>
+    </section>
+  </section>
+</main>

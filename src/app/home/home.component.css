@@ -1,0 +1,100 @@
+/* Styles for All devices screens */
+main > section:first-child {
+  background-color: var(--indigo-color, #23123A);
+  width: 100%; }
+  main > section:first-child > h1 {
+    position: absolute;
+    top: 20%;
+    margin-left: 2.5%;
+    margin-right: 2.5%;
+    color: var(--white-color, #FFFFFF);
+    font-family: proxima-nova-extra-bold, Arial, "Times New Roman", sans-serif, Serif;
+    font-size: 70pt; }
+  main > section:first-child > svg {
+    width: 100%;
+    height: 100%; }
+  main > section:first-child > #largeToolbar {
+    display: none; }
+main > section:last-child {
+  padding: 4% 4% 0 4%; }
+  main > section:last-child > h2 {
+    margin-bottom: 2.5%;
+    font-family: proxima-nova-bold, Arial, "Times New Roman", sans-serif, Serif;
+    font-size: 30pt; }
+  main > section:last-child > div {
+    min-height: 300px;
+    background-color: var(--white-color, #FFFFFF);
+    padding: 6% 7% 7% 7%; }
+  main > section:last-child div.secDivChild3111 {
+    width: 65%; }
+  main > section:last-child div.secDivChild3111 > img {
+    /*width: 202px;*/
+    width: 85%; }
+  main > section:last-child div.secDivChild212 {
+    margin-left: 1rem; }
+  main > section:last-child p.pChild1 {
+    font-size: 20pt; }
+  main > section:last-child ul.secUlChild1 {
+    margin-top: 5%;
+    padding-left: 5%; }
+  main > section:last-child ul.secUlChild1, main > section:last-child a.secAChild1 {
+    font-size: 18pt; }
+  main > section:last-child div.secDivChild312 > button.secDivBtnChild1, main > section:last-child div.secDivChild31 > button.secDivBtnChild1 {
+    font-family: proxima-nova-bold, Arial, "Times New Roman", sans-serif, Serif;
+    border: none;
+    color: var(--white-color, #FFFFFF);
+    height: 40px; }
+  main > section:last-child div.secDivChild312 > button.secDivBtnChild1 {
+    background-color: var(--medium-blue-green-color, #59D8D1);
+    width: 135px;
+    border-radius: 20px;
+    margin-top: 7%; }
+  main > section:last-child div.secDivChild31 > button.secDivBtnChild1 {
+    background-color: var(--tomato-red-color, #FA6E3D);
+    width: 100%;
+    border-radius: 5px;
+    margin-top: 7%;
+    margin-bottom: 5%; }
+  main > section:last-child button.secDivBtnChild1, main > section:last-child div.secDivChild3121, main > section:last-child div.secDivChild212, main > section:last-child div.secDivChild3112 {
+    font-size: 15pt; }
+  main > section:last-child div.secDivChild3112 {
+    text-align: center; }
+  main > section:last-child .div.secDivChild3121 {
+    text-align: center; }
+  main > section:last-child div.secDivChild31 {
+    width: 100%; }
+  main > section:last-child div.secDivChild1 {
+    padding: 10%; }
+
+/* Styles for small devices screens */
+/* Styles for medium devices screens */
+/* Styles for large devices screens */
+/* Styles for extra-large devices screens */
+@media (min-width: 1200px) {
+  main > section:first-child > h1 {
+    top: 20%;
+    margin-left: 2.5%;
+    margin-right: 2.5%;
+    font-size: 100pt; }
+  main > section:first-child > #largeToolbar {
+    display: block;
+    width: 100%;
+    height: 100%; }
+  main > section:first-child > #smallToolbar {
+    display: none; }
+  main div.secDivChild31 {
+    width: 55%; }
+  main div.secDivChild3 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between; }
+  main div.secDivChild31 {
+    width: 55%; }
+  main ul.secUlChild1 {
+    margin-left: 2%; }
+  main div.secDivChild31 > button.secDivBtnChild1 {
+    display: inline-block; }
+  main ul.secUlChild1 {
+    margin-top: 0; } }
+
+/*# sourceMappingURL=home.component.css.map */

@@ -1,0 +1,29 @@
+<main *ngIf="!errorPage; else errorDisplay">
+  <section>
+    <article>
+      <h1 class="mb-3 text-success">Congratulation ! Your application has been submitted successfully</h1>
+      <p class="mb-3">Here below are your personal data that will be linked to your new card :</p>
+    </article>
+    <article class="w-50">
+      <div class="mb-3 pb-3 border-bottom">
+        <strong>Full Name : {{ registeredCardData.fullName }}</strong><span></span>
+      </div>
+      <div class="mb-3 pb-3 border-bottom">
+        <strong>Home Address : {{ registeredCardData.homeAddress }}</strong><span></span>
+      </div>
+      <div class="mb-3 pb-3 border-bottom">
+        <strong>Email : {{ registeredCardData.email }}</strong><span></span>
+      </div>
+      <div class="">
+        <strong>Monthly Income : {{ registeredCardData.income }}</strong><span></span>
+      </div>
+    </article>
+    <button class="btn btn-light mt-5 customGoBackBtn" (click)="goBack()">Go Back</button>
+  </section>
+</main>
+<ng-template #errorDisplay>
+  <div class="p-5">
+    <h1 class="text-danger">Sorry ! You must first fill the form to get access to this content</h1>
+    <button class="btn btn-lg btn-outline-danger mt-5 customBtn" (click)="goToCardForm()">Go to the application form</button>
+  </div>
+</ng-template>

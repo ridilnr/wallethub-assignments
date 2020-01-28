@@ -1,0 +1,20 @@
+/* Styles for All devices screens */
+main{
+  background-color: var(--off-white-color, #F1F5F8);
+  min-height: 100vh;
+  & > section{
+    padding: 5%;
+  }
+}
+
+/* Styles for small devices screens */
+@media (min-width: 576px) {}
+
+/* Styles for medium devices screens */
+@media (min-width: 768px) {}
+
+/* Styles for large devices screens */
+@media (min-width: 992px) {}
+
+/* Styles for extra-large devices screens */
+@media (min-width: 1200px) {}

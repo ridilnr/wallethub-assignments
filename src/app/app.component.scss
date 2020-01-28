@@ -1,0 +1,58 @@
+/* Styles for All devices screens */
+.activeLink{
+  background-color: var(--medium-blue-green-color, #59D8D1);
+  & > a {
+    color: var(--white-color, #FFFFFF) !important;
+  }
+}
+header{
+  min-height: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: var(--indigo-color, #23123A);
+  & > div{}
+  nav{
+    min-height: 50px;
+    border: 1px solid #005cbf;
+    display: flex;
+    flex-direction: row;
+    background-color: var(--white-color, #FFFFFF);
+    font-family: proxima-nova-bold, Arial, "Times New Roman", sans-serif, Serif;
+    font-size: 16pt;
+    & > div {
+      border: 1px solid #59D8D1;
+      width: 33.333%;
+      text-align: center;
+      height: 50px;
+      line-height: 50px;
+      & > a {
+        display: inline-block;
+        vertical-align: middle;
+        color: var(--black-color, #000000);
+        text-decoration: none;
+        & > span {}
+      }
+    }
+    & > div:nth-child(1){
+      span{}
+    }
+    & > div:nth-child(2){
+      span{}
+    }
+    & > div:nth-child(3){
+      span{}
+    }
+  }
+}
+/* Styles for small devices screens */
+@media (min-width: 576px) {}
+
+/* Styles for medium devices screens */
+@media (min-width: 768px) {}
+
+/* Styles for large devices screens */
+@media (min-width: 992px) {}
+
+/* Styles for extra-large devices screens */
+@media (min-width: 1200px) {}

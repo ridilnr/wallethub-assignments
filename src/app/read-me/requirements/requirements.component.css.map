@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAAA,EAAG;EACD,SAAS,EAAE,gCAAgC;EAC3C,uBAAuB;EACvB,iBAAiB,EAAE,eAAe;;AAGpC,uBASC;EARC,IAAK;IACH,SAAS,EAAE,gBAAgB;IAC3B,OAAO,EAAE,CAAC;EAEZ,EAAG;IACD,SAAS,EAAE,cAAc;IACzB,OAAO,EAAE,CAAC",
+"sources": ["requirements.component.scss"],
+"names": [],
+"file": "requirements.component.css"
+}

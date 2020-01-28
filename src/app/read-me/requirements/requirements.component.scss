@@ -1,0 +1,16 @@
+ul {
+  animation: moveDownToUp 1s ease-in forwards;
+  /* Safari and Chrome */
+  -webkit-animation: moveDownToUp 1s;
+}
+
+@keyframes moveDownToUp {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0%);
+    opacity: 1
+  }
+}

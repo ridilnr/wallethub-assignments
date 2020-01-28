@@ -1,0 +1,45 @@
+<form (submit)="onSubmit($event)">
+  <div class="mb-3">
+    <div class="input-group">
+      <label for="name" class="font-weight-bold mt-1">Name : </label>
+      <input type="text" id="name" class="form-control ml-2" placeholder="Enter your name"
+             [value]="newComment.name" (input)="checkForNameError($event)"
+             (blur)="checkForNameError($event)" aria-label="name" aria-describedby="basic-addon-name">
+      <div class="input-group-prepend">
+          <span class="input-group-text" id="basic-addon-name">
+            <fa-icon [icon]="['fas', 'user']"></fa-icon>
+          </span>
+      </div>
+    </div>
+    <div *ngIf="errorMessages.nameError.state" class="text-danger ml-6 mt-1">
+      {{ errorMessages.nameError.message }}
+    </div>
+  </div>
+  <div class="mb-3">
+    <div class="input-group">
+      <label for="rating" class="font-weight-bold mt-1">Rating : </label>
+      <input type="number" min="1" max="5" id="rating" class="form-control ml-2" placeholder="Enter a rate"
+             [value]="newComment.rating" (input)="checkForRatingError($event)"
+             (blur)="checkForRatingError($event)" aria-label="rating" aria-describedby="basic-addon-rating">
+      <div class="input-group-prepend">
+      <span class="input-group-text" id="basic-addon-rating">
+        <fa-icon [icon]="['fas', 'star']"></fa-icon>
+      </span>
+      </div>
+    </div>
+    <div *ngIf="errorMessages.ratingError.state" class="text-danger ml-6 mt-1">
+      {{ errorMessages.ratingError.message }}
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="comments" class="font-weight-bold">Comments : </label>
+    <textarea class="form-control" id="comments" rows="3" placeholder="Give us your comments !"
+              [value]="newComment.comments" (input)="checkForCommentsError($event)"
+              (blur)="checkForCommentsError($event)">
+    </textarea>
+    <div *ngIf="errorMessages.commentsError.state" class="text-danger mt-1">
+      {{ errorMessages.commentsError.message }}
+    </div>
+  </div>
+  <button type="submit" [disabled]="invalidForm" [className]="classBtnSubmit">Send Comment</button>
+</form>

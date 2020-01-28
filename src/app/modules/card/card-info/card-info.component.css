@@ -1,0 +1,7 @@
+main {
+  background-color: var(--off-white-color, #F1F5F8);
+  min-height: 100vh; }
+  main > section {
+    padding: 5%; }
+
+/*# sourceMappingURL=card-info.component.css.map */
